@@ -1,0 +1,30 @@
+import * as React from "react";
+import * as ReactDOM from "react-dom/client";
+import "./index.css";
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+
+
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <h2>Swiss Realty</h2>,
+    errorElement: <h2>Page Not Found!!!</h2>,
+    children: [
+      {
+        path: '/',
+        element: <h1>Home Page</h1>,
+      },
+    ]
+  }
+])
+
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <RouterProvider router={router} />
+  </React.StrictMode>
+);
