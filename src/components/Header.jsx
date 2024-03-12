@@ -6,7 +6,7 @@ const Header = () => {
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/properties">Properties</NavLink></li>
         <li><NavLink to="/wishlist" className="flex">Wishlist</NavLink></li>
-        <li><NavLink to="/login"><button className="block lg:inline-block lg:py-2 lg:px-6 py-2 px-4 bg-blue hover:bg-blue-800 text-sm lg:text-base text-white font-bold rounded-xl transition duration-200">Login</button></NavLink></li>
+        <li><NavLink to="/login"><button className="block lg:inline-block lg:py-2 lg:px-6 py-2 px-4 bg-prim hover:bg-blue-800 text-sm lg:text-base text-white font-bold rounded-xl transition duration-200">Login</button></NavLink></li>
     </>
 
     return (

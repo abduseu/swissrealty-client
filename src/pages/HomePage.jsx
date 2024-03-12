@@ -1,4 +1,5 @@
 import Banner from "../components/Banner";
+import SearchForm from "../components/SearchForm";
 import useAuth from "../hooks/useAuth";
 
 const HomePage = () => {
@@ -6,6 +7,7 @@ const HomePage = () => {
     return (
         <div>
             <Banner/>
+            <SearchForm />
             home page | {name}
         </div>
     );

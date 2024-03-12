@@ -4,36 +4,40 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --primary-color: #0F298B;       /* #0F298B #D32F2F */
+  /* --secondary-color: #FAFAFA; */
+}
+
 body{
     font-family: 'Poppins', sans-serif;
     background-color: #FAFAFA;
 }
 
 span{
-  color: #0F298B;
+  color: var(--primary-color);
 }
 
 .active{
-  color: #0F298B;
+  color: var(--primary-color);
 }
 
-.bg-blue{
-  background-color: #0F298B;
+.bg-prim{
+  background-color: var(--primary-color);
 }
 
-.blue{
-  color: #0F298B;
+.prim{
+  color: var(--primary-color);
 }
 
 .theme-shadow {
   box-shadow: 24px 24px 48px 0px rgba(37, 73, 211, 0.05);
 }
 
-.btn-blue{
-  font-size: 24px;
+.btn-prim{
   padding: 8px 24px;
   font-weight: 700;
   border-radius: 8px;
-  background-color: #0F298B;
+  background-color: var(--primary-color);
   color: #fff;
 }
