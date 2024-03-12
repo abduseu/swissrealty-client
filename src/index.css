@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=inter:wght@100;200;300;400;500;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body{
-    font-family: 'inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: #FAFAFA;
 }
 
@@ -20,6 +21,19 @@ span{
   background-color: #0F298B;
 }
 
+.blue{
+  color: #0F298B;
+}
+
 .theme-shadow {
   box-shadow: 24px 24px 48px 0px rgba(37, 73, 211, 0.05);
+}
+
+.btn-blue{
+  font-size: 24px;
+  padding: 8px 24px;
+  font-weight: 700;
+  border-radius: 8px;
+  background-color: #0F298B;
+  color: #fff;
 }
