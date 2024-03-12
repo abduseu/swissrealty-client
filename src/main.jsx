@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import Root from "./components/Root";
 import AuthProvider from "./providers/AuthProvider";
+import HomePage from "./pages/HomePage";
 
 
 
@@ -18,7 +19,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <h1>Home Page</h1>,
+        element: <HomePage/>,
       },
     ]
   }
