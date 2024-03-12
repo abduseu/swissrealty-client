@@ -5,13 +5,14 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import Root from "./components/Root";
 
 
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <h2>Swiss Realty</h2>,
+    element: <Root></Root>,
     errorElement: <h2>Page Not Found!!!</h2>,
     children: [
       {
