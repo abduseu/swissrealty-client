@@ -2,7 +2,7 @@ const Footer = () => {
     return (
         <div className="footer justify-between py-10">
             <aside className="flex flex-col justify-center h-full">
-                <h2 className="text-2xl font-bold flex items-center uppercase">Swiss Realty</h2>
+                <h2 className="text-2xl font-bold flex items-center uppercase">Swisss <span>Realty</span></h2>
                 <p>The Bridge to Your Next Home</p>
             </aside>
             <nav>

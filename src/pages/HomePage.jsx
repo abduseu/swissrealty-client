@@ -1,13 +1,11 @@
 import Banner from "../components/Banner";
-import SearchForm from "../components/SearchForm";
 import useAuth from "../hooks/useAuth";
 
 const HomePage = () => {
     const {name} = useAuth()
     return (
         <div>
-            <Banner/>
-            <SearchForm />
+            <div className="mb-14"><Banner/></div>
             home page | {name}
         </div>
     );

@@ -5,17 +5,23 @@
 @tailwind utilities;
 
 :root {
-  --primary-color: #0F298B;       /* #0F298B #D32F2F */
+  --primary-color: #16A34A;       /* #0F298B #DD0A37 #16A34A */
   /* --secondary-color: #FAFAFA; */
 }
 
 body{
     font-family: 'Poppins', sans-serif;
-    background-color: #FAFAFA;
+    /* background-color: #FAFAFA; */
 }
 
 span{
   color: var(--primary-color);
+}
+
+.banner-bg{
+  background-image: url('https://i.ibb.co/NKwZvzD/interior-1.jpg'); 
+  background-size: cover; 
+  background-position: center;
 }
 
 .active{
