@@ -24,14 +24,15 @@ import AdminProfile from "./pages/admin/AdminProfile";
 import ManageUsers from "./pages/admin/ManageUsers";
 import ManageListings from "./pages/admin/ManageListings";
 import ManageReviews from "./pages/admin/ManageReviews";
+import ErrorPage from "./pages/ErrorPage";
 
 
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Root></Root>,
-    errorElement: <h2>Page Not Found!!!</h2>,
+    element: <Root/>,
+    errorElement: <ErrorPage/>,
     children: [
       {
         path: '/',
