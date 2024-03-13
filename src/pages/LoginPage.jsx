@@ -1,6 +1,7 @@
 import { AuthContext } from "../providers/AuthProvider";
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { axiosBase } from "../hooks/useAxios";
 
 const LoginPage = () => {
     const { signinEmail, signinGoogle } = useContext(AuthContext)
@@ -24,10 +25,10 @@ const LoginPage = () => {
             .catch((error) => {
                 const errorCode = error.code;
                 //login validation
-                if(errorCode === 'auth/invalid-login-credentials'){
+                if (errorCode === 'auth/invalid-login-credentials') {
                     setValidationError('Email or password does not match!')
-                    
-                }else{
+
+                } else {
                     setValidationError(errorCode)
                 }
             });
@@ -37,7 +38,16 @@ const LoginPage = () => {
         signinGoogle()
             .then(result => {
                 console.log('Google login succesful', result.user)
-                navigate('/')
+                const userInfo = {
+                    email: result.user?.email,
+                    name: result.user?.displayName,
+                    role: 'user'
+                }
+                axiosBase.post('/users', userInfo)
+                    .then(res => {
+                        console.log(res.data);
+                        navigate('/');
+                    })
             })
             .catch(error => {
                 setValidationError(error.message)
@@ -78,7 +88,7 @@ const LoginPage = () => {
                             <button onClick={handleGoogle} className="bg-blue-600 text-white hover:bg-yellow-500 font-bold w-full py-2 rounded">Google</button>
                         </div>
                         <p className="py-4 text-red-600 font-semibold">
-                            { validationError }
+                            {validationError}
                         </p>
                     </div>
                 </div>

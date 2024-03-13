@@ -1,9 +1,11 @@
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import { CiMinimize2 } from "react-icons/ci";
+import useAxios from "../hooks/useAxios";
 
 const Header = () => {
     const { user, logOut } = useAuth()
+    const {role} = useAxios(`/users/${user?.email}`)
 
     const handleSignout = () => {
         logOut()
@@ -49,7 +51,7 @@ const Header = () => {
                                         </label>
                                         <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded">
                                             <li className="whitespace-nowrap">{user.displayName}</li>
-                                            {/* <li><Link to={`/${role}`}>Dashboard</Link></li> */}
+                                            <li><Link to={`/${role}`}>Dashboard</Link></li>
                                             <li><Link onClick={handleSignout}>Signout</Link></li>
                                         </ul>
                                     </div>

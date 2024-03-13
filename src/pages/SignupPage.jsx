@@ -2,6 +2,8 @@ import { updateProfile } from "firebase/auth";
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
+import { axiosBase } from "../hooks/useAxios";
+
 
 const SignupPage = () => {
     const { createEmail } = useContext(AuthContext)
@@ -40,12 +42,22 @@ const SignupPage = () => {
                     displayName: name,
                     photoURL: photo,
                 })
-                    .then(() => {
-                        console.log('Profile Updated')
-                    })
-                    .catch(error => {
-                        console.log('Profile update failed', error.message)
-                    })
+                .then(() => {
+                    const userInfo = {
+                        email: result.user?.email,
+                        name: result.user?.displayName,
+                        role: 'user'
+                    }
+                    axiosBase.post('/users', userInfo)
+                        .then(res => {
+                            console.log(res.data);
+                            navigate('/');
+                        })
+                    console.log('Profile Updated')
+                })
+                .catch(error => {
+                    console.log('Profile update failed', error.message)
+                })
 
                 navigate('/')
             })
