@@ -27,6 +27,7 @@ import ManageReviews from "./pages/admin/ManageReviews";
 import ErrorPage from "./pages/ErrorPage";
 import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
+import Private from "./components/Private";
 
 
 
@@ -50,11 +51,11 @@ const router = createBrowserRouter([
       },
       {
         path: '/wishlist',
-        element: <Wishlist/>,
+        element: <Private><Wishlist/></Private>,
       },
       {
         path: '/make-offer',
-        element: <MakeOffer/>,
+        element: <Private><MakeOffer/></Private>,
       },
       {
         path: '/signup',
@@ -68,55 +69,55 @@ const router = createBrowserRouter([
       // Users Dashboard
       {
         path: '/user',
-        element: <Profile/>,
+        element: <Private><Profile/></Private>,
       },
       {
         path: '/bought',
-        element: <Bought/>,
+        element: <Private><Bought/></Private>,
       },
       {
         path: '/reviews',
-        element: <Reviews/>,
+        element: <Private><Reviews/></Private>,
       },
 
       // Agent Dashboard
       {
         path: '/agent',
-        element: <AgentProfile/>,
+        element: <Private><AgentProfile/></Private>,
       },
       {
         path: '/agent-listings',
-        element: <AgentListings/>,
+        element: <Private><AgentListings/></Private>,
       },
       {
         path: '/listing-add',
-        element: <ListingAdd/>,
+        element: <Private><ListingAdd/></Private>,
       },
       {
         path: '/listing-update',
-        element: <ListingUpdate/>,
+        element: <Private><ListingUpdate/></Private>,
       },
       {
         path: '/listing-sold',
-        element: <ListingSold/>,
+        element: <Private><ListingSold/></Private>,
       },
 
       // Admin Dashboard
       {
         path: '/admin',
-        element: <AdminProfile/>,
+        element: <Private><AdminProfile/></Private>,
       },
       {
         path: '/manage-users',
-        element: <ManageUsers/>,
+        element: <Private><ManageUsers/></Private>,
       },
       {
         path: '/manage-listings',
-        element: <ManageListings/>,
+        element: <Private><ManageListings/></Private>,
       },
       {
         path: '/manage-reviews',
-        element: <ManageReviews/>,
+        element: <Private><ManageReviews/></Private>,
       },
     ]
   }
