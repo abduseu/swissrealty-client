@@ -25,6 +25,8 @@ import ManageUsers from "./pages/admin/ManageUsers";
 import ManageListings from "./pages/admin/ManageListings";
 import ManageReviews from "./pages/admin/ManageReviews";
 import ErrorPage from "./pages/ErrorPage";
+import SignupPage from "./pages/SignupPage";
+import LoginPage from "./pages/LoginPage";
 
 
 
@@ -53,6 +55,14 @@ const router = createBrowserRouter([
       {
         path: '/make-offer',
         element: <MakeOffer/>,
+      },
+      {
+        path: '/signup',
+        element: <SignupPage/>,
+      },
+      {
+        path: '/login',
+        element: <LoginPage/>,
       },
 
       // Users Dashboard
