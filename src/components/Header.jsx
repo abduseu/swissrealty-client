@@ -1,5 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
+import { CiMinimize2 } from "react-icons/ci";
 
 const Header = () => {
     const { user, logOut } = useAuth()
@@ -32,7 +33,7 @@ const Header = () => {
             {/* Logo & Button */}
             <div className="flex flex-col md:flex-row md:gap-10 items-center justify-between mb-2">
                 <div>
-                    <Link to="/" className="text-2xl font-bold flex items-center uppercase">Swiss <span>Realty</span></Link>
+                    <Link to="/" className="text-2xl font-bold flex items-center uppercase gap-2"><CiMinimize2/>Swiss <span>Realty</span></Link>
                 </div>
                 <div className="mt-6 md:mt-0">
                     <div>
