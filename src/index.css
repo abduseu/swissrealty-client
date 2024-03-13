@@ -37,8 +37,8 @@ span{
   color: var(--primary-color);
 }
 
-.theme-shadow {
-  box-shadow: 24px 24px 48px 0px rgba(37, 73, 211, 0.05);
+.bg-gray{
+  background-color: #f2f2f7;
 }
 
 .btn-prim{
@@ -47,4 +47,8 @@ span{
   border-radius: 8px;
   background-color: var(--primary-color);
   color: #fff;
+}
+
+.theme-shadow {
+  box-shadow: 24px 24px 48px 0px rgba(37, 73, 211, 0.05);
 }
