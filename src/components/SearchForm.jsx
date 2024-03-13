@@ -2,8 +2,8 @@ const SearchForm = () => {
     return (
         <div className="theme-shadow bg-white my-14 rounded-3xl mx-auto">
             <div>
-                <div className="p-5 md:px-14 gap-5 w-full md:flex justify-between items-center">
-                    <div className="md:flex my-5">
+                <div className="p-5 md:px-16 gap-5 w-full lg:flex justify-between items-center">
+                    <div className="md:flex my-5 gap-5">
                         <div className="flex flex-col">
                             <label htmlFor="location" className="prim text-lg font-semibold">Location:</label>
                             <input type="text" name="location" placeholder="location" id="location" />
@@ -17,7 +17,9 @@ const SearchForm = () => {
                             <input type="text" name="for" placeholder="For Buy/Rent" id="buy_rent" />
                         </div>
                     </div>
-                    <button className="btn-prim">Search</button>
+                    <div className="flex justify-center">
+                        <button className="btn-prim hover:bg-black btn-wide btn">Search</button>
+                    </div>
                 </div>
 
             </div>
