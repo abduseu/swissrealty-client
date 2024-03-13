@@ -1,12 +1,30 @@
 import { Link, NavLink } from "react-router-dom";
+import useAuth from "../hooks/useAuth";
 
 const Header = () => {
+    const { user, logOut } = useAuth()
+
+    const handleSignout = () => {
+        logOut()
+            .then(() => {
+                console.log('Signout Successful!')
+            })
+            .catch((error) => {
+                console.log(error.message)
+            });
+    }
+
     //Navlink
     const links = <>
         <li><NavLink to="/">Home</NavLink></li>
-        <li><NavLink to="/properties">Properties</NavLink></li>
+        <li><NavLink to="/listings">Properties</NavLink></li>
         <li><NavLink to="/wishlist" className="flex">Wishlist</NavLink></li>
         <li><NavLink to="/login"><button className="block lg:inline-block lg:py-2 lg:px-6 py-2 px-4 bg-prim hover:bg-black text-sm lg:text-base text-white font-bold rounded-xl transition duration-200">Login</button></NavLink></li>
+    </>
+    const linksPrivate = <>
+        <li><NavLink to="/">Home</NavLink></li>
+        <li><NavLink to="/listings">Properties</NavLink></li>
+        <li><NavLink to="/wishlist" className="flex">Wishlist</NavLink></li>
     </>
 
     return (
@@ -19,7 +37,23 @@ const Header = () => {
                 <div className="mt-6 md:mt-0">
                     <div>
                         <ul className={`flex items-center gap-4 md:gap-8 text-base font-semibold list-none uppercase`}>
-                            {links}
+                            {user ?
+                                <>
+                                    {linksPrivate}
+                                    <div className="dropdown dropdown-end dropdown-hover">
+                                        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                            <div className="w-10 rounded-full">
+                                                <img src={user.photoURL} />
+                                            </div>
+                                        </label>
+                                        <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded">
+                                            <li className="whitespace-nowrap">{user.displayName}</li>
+                                            {/* <li><Link to={`/${role}`}>Dashboard</Link></li> */}
+                                            <li><Link onClick={handleSignout}>Signout</Link></li>
+                                        </ul>
+                                    </div>
+                                </> :
+                                links}
                         </ul>
                     </div>
                 </div>
