@@ -6,12 +6,10 @@ const Details = () => {
     const { image, title, location, agent_name, agent_image, min_price, max_price, description } = useAxios(`/properties/${id}`)
     return (
         <div className="border rounded-lg">
-            <div className="relative text-center p-10 banner-bg rounded-t-lg uppercase">
-                <div className="absolute inset-0 bg-black opacity-20"></div>
-                <h2 className="prim font-bold text-2xl md:text-4xl relative z-10">Details</h2>
-                <p className="font-medium relative z-10">Home / Products / Details</p>
+            <div className="text-center p-10 banner-bg rounded-t-lg uppercase">
+                <h2 className="prim font-bold text-2xl md:text-4xl">Details</h2>
+                <p className="font-medium">Home / Products / Details</p>
             </div>
-
             <div className="py-10 md:py-20 px-4 md:px-20">
                 <div className="mx-auto md:flex gap-10">
                     <div>
