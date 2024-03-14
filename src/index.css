@@ -4,9 +4,15 @@
 @tailwind components;
 @tailwind utilities;
 
+/* 
+Color code:
+navy black  : #0F298B #000
+geen orange : #036351 #FF6200
+*/
+
 :root {
-  --primary-color: #0F298B;       /* #0F298B #DD0A37 #16A34A */
-  /* --secondary-color: #FAFAFA; */
+  --primary-color: #036351;       /* #0F298B #DD0A37 #16A34A */
+  --secondary-color: #FF6200;
 }
 
 body{
@@ -36,6 +42,13 @@ span{
 .prim{
   color: var(--primary-color);
 }
+.bg-seco{
+  background-color: var(--secondary-color);
+}
+
+.seco{
+  color: var(--secondary-color);
+}
 
 .bg-gray{
   background-color: #f2f2f7;
@@ -46,6 +59,13 @@ span{
   font-weight: 700;
   border-radius: 8px;
   background-color: var(--primary-color);
+  color: #fff;
+}
+.btn-seco{
+  padding: 8px 24px;
+  font-weight: 700;
+  border-radius: 8px;
+  background-color: var(--secondary-color);
   color: #fff;
 }
 

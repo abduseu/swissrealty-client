@@ -18,7 +18,7 @@ const SearchForm = () => {
                         </div>
                     </div>
                     <div className="flex justify-center">
-                        <button className="btn-prim hover:bg-black btn-wide btn">Search</button>
+                        <button className="btn-prim hover:bg-orange-600 btn-wide btn">Search</button>
                     </div>
                 </div>
 

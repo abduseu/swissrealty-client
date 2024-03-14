@@ -17,7 +17,7 @@ const Details = () => {
                     </div>
                     <div className="px-5 text-xl flex flex-col justify-between max-w-xl">
                         <div>
-                            <div className="font-bold text-2xl">
+                            <div className="font-bold text-2xl prim">
                                 {title}
                             </div>
                             <div>
@@ -31,11 +31,11 @@ const Details = () => {
                                 {description}
                             </div>
                         </div>
-                        <div className="font-bold flex py-2">Price Range: <span className="px-2">${min_price} - ${max_price}</span></div>
+                        <div className="font-bold flex py-2">Price Range: <span className="px-2 seco">${min_price} - ${max_price}</span></div>
                     </div>
                 </div>
                 <div className="text-center pt-10 md:pt-20">
-                    <button className="btn btn-prim hover:bg-black">Add to Wishlist</button>
+                    <button className="btn btn-prim hover:bg-orange-600">Add to Wishlist</button>
                 </div>
             </div>
         </div>
