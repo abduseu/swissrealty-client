@@ -1,13 +1,20 @@
+import CardAll from "../components/CardAll";
+import useAxios from "../hooks/useAxios";
+
 const Listings = () => {
+    const properties = useAxios('/properties')
+
     return (
         <div className="border rounded-lg">
             <div className="text-center p-10 banner-bg rounded-t-lg uppercase">
                 <h2 className="prim font-bold text-2xl md:text-4xl">Property Listings</h2>
                 <p className="font-medium">Home / Listings</p>
             </div>
-            <div className="pb-10 md:pb-20 px-10 md:px-20">
-                <div className="overflow-x-auto">
-                    content will be here
+            <div className="py-10 md:py-20 px-4 md:px-20">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-5 w-full">
+                    {
+                        properties.map(x => <CardAll key={x._id} obj={x}></CardAll>)
+                    }
                 </div>
             </div>
         </div>
