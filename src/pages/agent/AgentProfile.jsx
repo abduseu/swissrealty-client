@@ -1,8 +1,10 @@
 import useAuth from "../../hooks/useAuth";
+import useAxios from "../../hooks/useAxios";
 import AgentDrawer from "./AgentDrawer";
 
 const AgentProfile = () => {
     const { user } = useAuth()
+    const { role } = useAxios(`/users/${user.email}`)
 
     return (
         <div className="md:flex border">
@@ -15,8 +17,11 @@ const AgentProfile = () => {
                             <div className="flex justify-center">
                                 <img src={user.photoURL} className="rounded-full max-w-xs" />
                             </div>
-                            <h3>Name: <span>{user.displayName}</span> </h3>
+                            <h3>Name: <span>{user.displayName}</span></h3>
                             <h3>Email: <span>{user.email}</span> </h3>
+                            {
+                                (role === 'agent') && <h3>Role: <span className="seco uppercase">{role}</span> </h3>
+                            }
                         </div>
                     </div>
                 </div>

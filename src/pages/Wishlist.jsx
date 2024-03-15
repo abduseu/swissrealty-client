@@ -42,10 +42,10 @@ const Wishlist = () => {
     };
 
     return (
-        <div className="border rounded-lg">
-            <div className="text-center p-10 banner-bg rounded-t-lg uppercase">
-                <h2 className="prim font-bold text-2xl md:text-4xl">My Wishlist</h2>
-                <p className="font-medium">Home / Wishlist</p>
+        <div className="border rounded-lg min-h-screen">
+            <div className="text-center p-10 bg-prim rounded-t-lg uppercase">
+                <h2 className="text-white font-bold text-2xl md:text-4xl">My Wishlist</h2>
+                {/* <p className="font-medium">Home / Wishlist</p> */}
             </div>
             <div className="lg:flex">
                 <div className="p-5 w-full space-y-12">

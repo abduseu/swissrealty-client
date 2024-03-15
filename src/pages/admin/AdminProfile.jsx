@@ -1,8 +1,10 @@
 import useAuth from "../../hooks/useAuth";
+import useAxios from "../../hooks/useAxios";
 import AdminDrawer from "./AdminDrawer";
 
 const AdminProfile = () => {
     const { user } = useAuth()
+    const { role } = useAxios(`/users/${user.email}`)
 
     return (
         <div className="md:flex border">
@@ -17,6 +19,9 @@ const AdminProfile = () => {
                             </div>
                             <h3>Name: <span>{user.displayName}</span> </h3>
                             <h3>Email: <span>{user.email}</span> </h3>
+                            {
+                                (role === 'admin') && <h3>Role: <span className="seco uppercase">{role}</span> </h3>
+                            }
                         </div>
                     </div>
                 </div>

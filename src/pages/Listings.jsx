@@ -6,9 +6,9 @@ const Listings = () => {
 
     return (
         <div className="border rounded-lg">
-            <div className="text-center p-10 banner-bg rounded-t-lg uppercase">
-                <h2 className="prim font-bold text-2xl md:text-4xl">Property Listings</h2>
-                <p className="font-medium">Home / Listings</p>
+            <div className="text-center p-10 bg-prim rounded-t-lg uppercase">
+                <h2 className="text-white font-bold text-2xl md:text-4xl">Property Listings</h2>
+                {/* <p className="font-medium">Home / Listings</p> */}
             </div>
             <div className="py-10 md:py-20 px-4 md:px-20">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-5 w-full">
