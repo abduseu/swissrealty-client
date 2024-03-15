@@ -41,17 +41,17 @@ const AgentListings = () => {
 
 
     return (
-        <div className="md:flex border rounded-lg">
+        <div className="md:flex border">
             <AgentDrawer></AgentDrawer>
             <div className="bg-cover bg-center w-full">
                 <div className="flex justify-center items-center">
-                    <div className="text-center p-6 md:p-10 w-full">
-                        <h3 className="text-3xl font-semibold mb-6 uppercase">Agent Listings</h3>
+                    <div className="text-center p-6 w-full">
+                        <h3 className="text-2xl font-semibold mb-6 uppercase">Agent Listings</h3>
                         <div className="text-xl space-y-4">
                             <div>
                                 {listings.map((x, index) => (
-                                    <div key={x._id} className="flex justify-between items-center my-4 md:w-3/4 mx-auto">
-                                        <div className="md:flex items-center">
+                                    <div key={x._id} className="flex justify-between items-center my-4 md:px-10 mx-auto">
+                                        <div className="md:flex items-center w-2/3">
                                             <div className="text-left">
                                                 <Link to={`/details/${x._id}`}>
                                                     <h3 className="font-semibold text-sm">{index + 1}. {x.title}</h3>
@@ -59,8 +59,9 @@ const AgentListings = () => {
                                                 </Link>
                                             </div>
                                         </div>
-                                        <div className="flex items-center gap-4 font-semibold text-sm">
-                                            <h3 className="prim">${x.min_price} - ${x.max_price}</h3>
+                                        <div className="flex justify-end items-center gap-2 font-semibold text-sm">
+                                            <h3 className="prim text-right">${x.min_price} - ${x.max_price}</h3>
+                                            <button onClick={'edit'} className="btn btn-sm">Edit</button>
                                             <button onClick={()=>handleDeleteProperty(x._id)} className="btn btn-sm text-red-600">X</button>
                                         </div>
                                     </div>

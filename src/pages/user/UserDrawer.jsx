@@ -12,9 +12,9 @@ const UserDrawer = () => {
                 </div>
                 <div className="drawer-side">
                     <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
-                    <ul className="menu p-4 w-80 min-h-full bg-gray text-base-content">
+                    <ul className="menu p-6 w-80 min-h-full bg-prim text-white">
                         {/* Sidebar content here */}
-                        <li className="font-semibold text-2xl my-4">Dashboard</li>
+                        <li className="font-semibold text-2xl mb-4">Dashboard</li>
                         <li><Link to={'/user'}>User Profile</Link></li>
                         <li><Link to={'/reviews'}>My Reviews</Link></li>
                         <li><Link to={'/bought'}>Bought Properties</Link></li>
