@@ -2,11 +2,15 @@ import { useEffect, useState } from "react";
 import useAuth from "../hooks/useAuth";
 import { axiosBase } from "../hooks/useAxios";
 import { Link } from "react-router-dom";
+import Swal from 'sweetalert2';
+import useWishlist from '../hooks/useWishlist';
 
 const Wishlist = () => {
     const {user} = useAuth()
     const [wishlist, setWishlist] = useState([]);
+    const [, refetch] = useWishlist();
 
+    //fetch data
     const filterEmail = user.email;
     useEffect(() => {
         axiosBase(`/wishlist?email=${filterEmail}`)
@@ -15,6 +19,27 @@ const Wishlist = () => {
                 setWishlist(res.data);
             });
     }, [filterEmail]);
+
+
+    //Delete function
+    const handleDeleteWishlist = (id) => {
+        axiosBase.delete(`/wishlist/${id}`)
+            .then(res => {
+                console.log(res.data);
+                if (res.data.deletedCount > 0) {
+                    refetch()
+                    Swal.fire(
+                        'Deleted!',
+                        'Property removed from wishlist.',
+                        'success'
+                    );
+                    const remaining = wishlist.filter(x => x._id !== id);
+                    setWishlist(remaining);
+                }
+            });
+
+        console.log('clicked: ', id);
+    };
 
     return (
         <div className="border rounded-lg">
@@ -37,7 +62,7 @@ const Wishlist = () => {
                                 </div>
                                 <div className="flex items-center gap-4 font-bold text-xl">
                                     <h3 className="prim">${x.min_price} - ${x.max_price}</h3>
-                                    <button className="btn btn-sm text-red-600">X</button>
+                                    <button onClick={()=>handleDeleteWishlist(x._id)} className="btn btn-sm text-red-600">X</button>
                                 </div>
                             </div>
                         ))}
