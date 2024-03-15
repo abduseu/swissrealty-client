@@ -23,8 +23,8 @@ const Details = () => {
                             <div>
                                 {location}
                             </div>
-                            <div className="flex items-center py-2">
-                                <img src={agent_image} className="h-10" />
+                            <div className="flex items-center py-2 gap-2">
+                                <img src={agent_image} className="h-6 rounded-full" />
                                 <h3>{agent_name}</h3>
                             </div>
                             <div>

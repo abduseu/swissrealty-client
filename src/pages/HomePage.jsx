@@ -1,3 +1,4 @@
+import Advertise from "../components/Advertise";
 import Banner from "../components/Banner";
 import useAuth from "../hooks/useAuth";
 
@@ -5,7 +6,8 @@ const HomePage = () => {
     const {name} = useAuth()
     return (
         <div>
-            <div className="mb-14"><Banner/></div>
+            <Banner/>
+            <Advertise/>
             home page | {name}
         </div>
     );
