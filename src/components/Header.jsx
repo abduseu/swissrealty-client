@@ -29,7 +29,7 @@ const Header = () => {
     const linksPrivate = <>
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/listings">Properties</NavLink></li>
-        <li><NavLink to="/wishlist" className="flex">Wishlist<sup className="seco">{wishlist.length}</sup></NavLink></li>
+        <li><NavLink to="/wishlist" className="flex">Wishlist<sup className="seco rounded-full text-xs ml-1">{wishlist.length}</sup></NavLink></li>
     </>
 
     return (
