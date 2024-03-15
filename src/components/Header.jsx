@@ -2,10 +2,12 @@ import { Link, NavLink } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import { CiMinimize2 } from "react-icons/ci";
 import useAxios from "../hooks/useAxios";
+import useWishlist from "../hooks/useWishlist";
 
 const Header = () => {
     const { user, logOut } = useAuth()
     const {role} = useAxios(`/users/${user?.email}`)
+    const [wishlist] = useWishlist()
 
     const handleSignout = () => {
         logOut()
@@ -27,7 +29,7 @@ const Header = () => {
     const linksPrivate = <>
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/listings">Properties</NavLink></li>
-        <li><NavLink to="/wishlist" className="flex">Wishlist</NavLink></li>
+        <li><NavLink to="/wishlist" className="flex">Wishlist<sup className="seco">{wishlist.length}</sup></NavLink></li>
     </>
 
     return (

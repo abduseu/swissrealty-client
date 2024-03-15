@@ -1,9 +1,52 @@
-import { useParams } from "react-router-dom";
-import useAxios from "../hooks/useAxios";
+import { useNavigate, useParams } from "react-router-dom";
+import useAxios, { axiosBase } from "../hooks/useAxios";
+import useAuth from "../hooks/useAuth";
+import Swal from "sweetalert2";
+import useWishlist from "../hooks/useWishlist";
 
 const Details = () => {
     const { id } = useParams()
-    const { image, title, location, agent_name, agent_image, min_price, max_price, description } = useAxios(`/properties/${id}`)
+    const { _id, image, title, location, agent_name, agent_image, min_price, max_price, description } = useAxios(`/properties/${id}`)
+    const {user} = useAuth()
+    const [, refetch] = useWishlist();
+    const navigate = useNavigate()
+
+    const handleAddWishlist = ()=>{
+        // const email = user.email
+        // const image = image
+        // const title = title
+        // const location = location
+        // const min_price = min_price
+        // const max_price = max_price
+
+        const wishlist = { 
+            email: user.email, 
+            proprtyId: _id,
+            image: image, 
+            title: title, 
+            location: location, 
+            min_price: min_price, 
+            max_price: max_price
+        }
+
+        
+        axiosBase.post('/wishlist', wishlist)
+        .then(res => {
+            console.log(res.data)
+            if(res.data.insertedId){
+                refetch()
+                Swal.fire(
+                    'Property Added!',
+                    'Property added to Wishlist!',
+                    'success'
+                )
+                //redirect
+                navigate('/listings')
+            }
+        })
+    }
+
+
     return (
         <div className="border rounded-lg">
             <div className="text-center p-10 banner-bg rounded-t-lg uppercase">
@@ -35,7 +78,7 @@ const Details = () => {
                     </div>
                 </div>
                 <div className="text-center pt-10 md:pt-20">
-                    <button className="btn btn-prim hover:bg-orange-600">Add to Wishlist</button>
+                    <button onClick={handleAddWishlist} className="btn btn-prim hover:bg-orange-600">Add to Wishlist</button>
                 </div>
             </div>
         </div>
