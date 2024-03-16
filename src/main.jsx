@@ -95,7 +95,7 @@ const router = createBrowserRouter([
         element: <Private><ListingAdd/></Private>,
       },
       {
-        path: '/listing-update',
+        path: '/listing-update/:id',
         element: <Private><ListingUpdate/></Private>,
       },
       {

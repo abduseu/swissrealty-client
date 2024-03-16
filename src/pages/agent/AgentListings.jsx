@@ -61,7 +61,7 @@ const AgentListings = () => {
                                         </div>
                                         <div className="flex justify-end items-center gap-2 font-semibold text-sm">
                                             <h3 className="prim text-right">${x.min_price} - ${x.max_price}</h3>
-                                            <button onClick={'edit'} className="btn btn-sm">Edit</button>
+                                            <Link to={`/listing-update/${x._id}`}><button className="btn btn-sm">Edit</button></Link>
                                             <button onClick={()=>handleDeleteProperty(x._id)} className="btn btn-sm text-red-600">X</button>
                                         </div>
                                     </div>
