@@ -56,6 +56,14 @@ span{
   background-color: #f2f2f7;
 }
 
+.bg-green{
+  background-color: #16A34A;
+}
+
+.green{
+  color: #16A34A;
+}
+
 .btn-prim{
   padding: 8px 24px;
   font-weight: 700;
