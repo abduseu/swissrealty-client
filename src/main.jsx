@@ -29,6 +29,7 @@ import ErrorPage from "./pages/ErrorPage";
 import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
 import Private from "./components/Private";
+import ListingRequested from "./pages/agent/ListingRequested";
 
 
 
@@ -55,7 +56,7 @@ const router = createBrowserRouter([
         element: <Private><Wishlist/></Private>,
       },
       {
-        path: '/make-offer',
+        path: '/make-offer/:id',
         element: <Private><MakeOffer/></Private>,
       },
       {
@@ -97,6 +98,10 @@ const router = createBrowserRouter([
       {
         path: '/listing-update/:id',
         element: <Private><ListingUpdate/></Private>,
+      },
+      {
+        path: '/listing-requested',
+        element: <Private><ListingRequested/></Private>,
       },
       {
         path: '/listing-sold',

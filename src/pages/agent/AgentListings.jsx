@@ -55,7 +55,7 @@ const AgentListings = () => {
                                             <div className="text-left">
                                                 <Link to={`/details/${x._id}`}>
                                                     <h3 className="font-semibold text-sm">{index + 1}. {x.title}</h3>
-                                                    <p className="text-sm">{x.location}</p>
+                                                    <p className="text-sm">{x.location} | <span>{x.agent_name}</span></p>
                                                 </Link>
                                             </div>
                                         </div>

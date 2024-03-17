@@ -18,6 +18,7 @@ const AgentDrawer = () => {
                         <li><Link to={'/agent'}>Agent Profile</Link></li>
                         <li><Link to={'/agent-listings'}>Agent Listings</Link></li>
                         <li><Link to={'/listing-add'}>Add Property</Link></li>
+                        <li><Link to={'/listing-requested'}>Offer Request</Link></li>
                         <li><Link to={'/listing-sold'}>Sold Properties</Link></li>
                     </ul>
 
