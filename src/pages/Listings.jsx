@@ -2,7 +2,8 @@ import CardAll from "../components/CardAll";
 import useAxios from "../hooks/useAxios";
 
 const Listings = () => {
-    const properties = useAxios('/properties')
+    const allProperties = useAxios('/properties')
+    const properties = allProperties.filter(x => x.verification === 'verified')
 
     return (
         <div className="border rounded-lg">
