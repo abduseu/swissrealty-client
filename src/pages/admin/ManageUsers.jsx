@@ -11,6 +11,7 @@ const ManageUsers = () => {
             .then(res => { setUsers(res.data) })
     }, [])
 
+    //change user role
     const handleApply = (e) => {
         e.preventDefault();
         const form = e.target
@@ -31,9 +32,23 @@ const ManageUsers = () => {
                     axiosBase('/users')
                         .then(res => { setUsers(res.data) })
                 }
-
             })
+    }
 
+    //Delete user
+    const handleDelete = (id) => {
+        axiosBase.delete(`/manage-users/${id}`)
+            .then(res => {
+                if (res.data.deletedCount > 0) {
+                    Swal.fire(
+                        'Deleted!',
+                        'User has been removed!.',
+                        'success'
+                    );
+                    axiosBase('/users')
+                        .then(res => { setUsers(res.data) })
+                }
+            });
     }
 
     return (
@@ -55,7 +70,7 @@ const ManageUsers = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="text-sm">
+                                        <div className="text-sm flex gap-2">
                                             <form onSubmit={handleApply} className="flex gap-2">
                                                 <select name="role" defaultValue={x.role} className="select select-sm select-success w-full max-w-20 uppercase">
                                                     {/* <option disabled selected>{x.role}</option> */}
@@ -67,6 +82,7 @@ const ManageUsers = () => {
                                                 <input type="hidden" name="id" value={x._id} />
                                                 <button className="btn btn-sm md:btn-sm text-white bg-prim btn-success">Apply</button>
                                             </form>
+                                            <button onClick={() => handleDelete(x._id)} className="btn btn-sm md:btn-sm text-white bg-red-600 btn-error">X</button>
                                         </div>
                                     </div>
                                 ))}
