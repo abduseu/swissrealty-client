@@ -72,7 +72,7 @@ const ManageUsers = () => {
                                         </div>
                                         <div className="text-sm flex gap-2">
                                             <form onSubmit={handleApply} className="flex gap-2">
-                                                <select name="role" defaultValue={x.role} className="select select-sm select-success w-full max-w-20 uppercase">
+                                                <select name="role" defaultValue={x.role} className="select select-sm select-success w-full max-w-xs uppercase">
                                                     {/* <option disabled selected>{x.role}</option> */}
                                                     <option value="admin">Admin</option>
                                                     <option value="agent">Agent</option>

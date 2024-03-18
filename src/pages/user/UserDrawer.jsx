@@ -16,7 +16,7 @@ const UserDrawer = () => {
                         {/* Sidebar content here */}
                         <li className="font-semibold text-2xl mb-4">Dashboard</li>
                         <li><Link to={'/user'}>User Profile</Link></li>
-                        <li><Link to={'/reviews'}>My Reviews</Link></li>
+                        {/* <li><Link to={'/reviews'}>My Reviews</Link></li> */}
                         <li><Link to={'/bought'}>Bought Properties</Link></li>
                     </ul>
 
