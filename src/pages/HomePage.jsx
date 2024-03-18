@@ -1,6 +1,7 @@
 import Advertise from "../components/Advertise";
 import Banner from "../components/Banner";
 import ContactForm from "../components/ContactForm";
+import Deals from "../components/Deals";
 import Facts from "../components/Facts";
 
 const HomePage = () => {
@@ -9,6 +10,7 @@ const HomePage = () => {
             <Banner/>
             <Advertise/>
             <Facts/>
+            <Deals/>
             <ContactForm/>
         </div>
     );
