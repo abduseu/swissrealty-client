@@ -6,7 +6,7 @@ const Advertise = () => {
 
     return (
         <div>
-            <div className="py-10 md:py-20 px-4 md:px-20">
+            <div className="py-10 md:py-20 px-4 md:px-20 bg-prim my-14 rounded-lg">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-5 w-full">
                     {
                         properties.slice(0,3).map(x => <CardAll key={x._id} obj={x}></CardAll>)
