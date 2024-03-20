@@ -1,7 +1,5 @@
 # Swiss Realty - Real Estate Management Platform
 
-## Introduction
-
 Welcome to Swiss Realty, the ultimate destination for all your real estate needs. This platform is designed with simplicity and ease of use in mind, ensuring that whether you're buying, selling, or simply exploring, your experience is smooth and hassle-free.
 
 ## Features and Functionality
